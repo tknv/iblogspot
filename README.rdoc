@@ -1,0 +1,55 @@
+= Easy,show your blogspot on iphone by Google App Engine.
+= But slow and still there is many TODO.
+
+* 1.Make blogspot
+* 2.Make appspot account and application.
+* 3.Build sinatra env on jruby
+  
+    This lecture is helpful.
+    http://blog.bigcurl.de/2009/04/running-sinatra-apps-on-google.html
+    and my blog(especially for windows)
+    http://yet-another-problem.blogspot.com/
+    http://yet-another-problem.appspot.com/
+* 4.Change confs and value for your env.
+* 5.Pls help TODO.
+
+== Change.
+
+  lib/blog.rb
+    $blogID = 'your BlogID'
+    BlogID is shown in your blogspot setting page URL.
+    
+  views/other.haml
+    %a{ :href => 'http://your-blog-name.blogspot.com/' }
+    
+  appengine-web.xml
+    <application>your appspot name</application>
+    
+== Chekc java and rack-java versions.
+    
+    java version "1.6.0_14"
+    Java(TM) SE Runtime Environment (build 1.6.0_14-b08)
+    Java HotSpot(TM) Client VM (build 14.0-b16, mixed mode, sharing)
+    
+    jruby-rack 0.9.5
+    
+    otherwise build env by avode way.
+    
+== TODO
+* Change simple-xml to libxml.Because slow now.
+* Get Archive list and show list.
+* Add Search API by tag.
+* And Many many
+* or change to WordPress ?
+
+== Limitations
+* Need to blogger feed setting "ALL FULL".
+* Need to blog subtitles(discliption).
+* Now show only recent 5 titles.
+
+
+== Meta
+lib/blog.rb Made by:
+Watanabe Takanobu
+
+Released under the MIT License: http://www.opensource.org/licenses/mit-license.php

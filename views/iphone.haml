@@ -1,0 +1,24 @@
+!!!
+%html{html_attrs(lang='utf8')}
+  %head
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html', :charset => 'UTF-8'}
+    %title= @iblog.title
+    %meta{'name' => 'viewport', :content => 'width = device-width, user-scalable=yes'}
+    %style{'type'=> 'text/css', :media => 'screen'}@import 'stylesheets/iui.css';
+    %script{'type'=> 'application/x-javascript', :src => 'javascripts/iuix.js'}
+    %link{ :href => "css/style.css", :rel => "stylesheet", :type => "text/css" }
+
+  %body
+  .toolbar
+    %h1{'id'=> 'pageTitle'}
+    %a{:href => '#', :id => 'backButton', :class => 'button'}
+  %ul{'selected' => 'true', :title => @iblog.title}
+    %h3.header{:align => 'center'}
+      = @iblog.subtitle
+    -(0..4).each do |i|
+      %li
+        %a{:href =>"##{i}"}
+          = @iblog.titles(i)
+  -(0..4).each do |i|
+    %div{:id => "#{i}", :title => @iblog.titles(i), :class => 'panel'}
+      = @iblog.content(i)
