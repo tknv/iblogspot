@@ -10,7 +10,7 @@ class Blog
   $blogID = 'your BlogID'
 
   def contents
-   feed = URLFetch.get("http://www.blogger.com/feeds/#{$blogID}/posts/default",:header => { 'Content-Type' => 'application/x-www-form-urlencoded'})
+   feed = URLFetch.get("http://www.blogger.com/feeds/#{$blogID}/posts/default?max-results=5",:header => { 'Content-Type' => 'application/x-www-form-urlencoded'})
    XmlSimple.xml_in(feed.to_s)
   end
 
