@@ -5,9 +5,9 @@ require 'rubygems'
 require 'xmlsimple'
 #require 'net/http'  # for denug
 
-class Blog
+$blogID = '2736766923155041598'
 
-  $blogID = 'your BlogID'
+class Blog
 
   def contents
    feed = URLFetch.get("http://www.blogger.com/feeds/#{$blogID}/posts/default?max-results=5",:header => { 'Content-Type' => 'application/x-www-form-urlencoded'})

@@ -3,7 +3,8 @@
 require 'rubygems'
 require 'sinatra'
 require 'lib/blog'
-
+require 'lib/labels'
+  
 error do
 	e = request.env['sinatra.error']
 	puts e.to_s
@@ -46,8 +47,12 @@ get '/' do
   @iblog = Blog.new
   if @request_from == "iphone"
     then haml :iphone
-    else haml :other  #debug=>iphone, prod=>other
+    else haml :other
   end
+end
+
+get '/cron/collect_label' do
+	load 'lib/labels'
 end
 
 #Error handling
