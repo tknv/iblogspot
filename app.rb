@@ -4,6 +4,7 @@ require 'rubygems'
 require 'sinatra'
 require 'lib/blog'
 require 'lib/labels'
+
   
 error do
 	e = request.env['sinatra.error']
@@ -52,7 +53,14 @@ get '/' do
 end
 
 get '/cron/collect_label' do
-	load 'lib/labels'
+	@labels = Labels.new
+	@labels.update
+	"Labels Updated"
+end
+
+get '/test' do
+	@labels = Labels.new
+	haml :test
 end
 
 #Error handling
