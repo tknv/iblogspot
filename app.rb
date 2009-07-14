@@ -19,22 +19,6 @@ helpers do
     request.user_agent =~ /(Mobile\/.+Safari)/
   end
   
-  def button_link_to(name, options, html_options = nil)
-    html_options[:class] = "button"
-    link_to(name, options, html_options)
-  end
-    
-  def iui_toolbar(initial_caption, search_url = nil)
-    back_button = button_link_to("", "#", :id => "backButton")
-    header = content_tag(:h1, initial_caption, :id => "pageTile")
-    search_link = if search_url 
-                  then button_link_to("Search", search_url, :id => "searchButton")
-                  else ""
-                  end 
-    content = [back_button, header, search_link].join("\n")
-    content_tag(:div, content, :class => "toolbar")
-  end
-  
 end
 
 before do
@@ -56,11 +40,6 @@ get '/cron/collect_label' do
 	@labels = Labels.new
 	@labels.update
 	"Labels Updated"
-end
-
-get '/test' do
-	@labels = Labels.new
-	haml :test
 end
 
 #Error handling
