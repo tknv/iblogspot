@@ -12,6 +12,7 @@
   .toolbar
     %h1{'id'=> 'pageTitle'}
     %a{:href => '#', :id => 'backButton', :class => 'button'}
+    %a{:href => '#search', :id => 'searchButton', :class => 'button'} SEARCH
   %ul{'selected' => 'true', :title => @iblog.title}
     %h3.header{:align => 'center'}
       = @iblog.subtitle
@@ -22,3 +23,5 @@
   -(0..4).each do |i|
     %div{:id => "#{i}", :title => @iblog.titles(i), :class => 'panel'}
       = @iblog.content(i)
+    %div{:id => "#search", :title => SEARCH, :class => 'panel'}
+      = not yet

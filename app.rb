@@ -42,6 +42,11 @@ get '/cron/collect_label' do
 	"Labels Updated"
 end
 
+get '/search' do
+	@iblog = Blog.new
+	haml :search
+end
+
 #Error handling
 not_found do
     '404 This is nowhere to be found'
