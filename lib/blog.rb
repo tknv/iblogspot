@@ -1,11 +1,10 @@
 #! ruby -Ku
 
 require 'lib/urlfetch'
+require 'lib/id'
 require 'rubygems'
 require 'xmlsimple'
 #require 'net/http'  # for denug
-
-$blogID = '2736766923155041598'
 
 class Blog
 

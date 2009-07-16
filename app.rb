@@ -5,7 +5,6 @@ require 'sinatra'
 require 'lib/blog'
 require 'lib/labels'
 
-  
 error do
 	e = request.env['sinatra.error']
 	puts e.to_s
@@ -43,9 +42,11 @@ get '/cron/collect_label' do
 end
 
 get '/search' do
-	@iblog = Blog.new
+  @iblog = Blog.new
+	@labels = Labels.new
 	haml :search
 end
+	
 
 #Error handling
 not_found do
