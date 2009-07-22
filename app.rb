@@ -28,6 +28,7 @@ before do
 end
 
 get '/' do
+'debug'
   @iblog = Blog.new
   if @request_from == "iphone"
     then haml :iphone
@@ -43,10 +44,18 @@ end
 
 get '/search' do
   @iblog = Blog.new
-	@labels = Labels.new
+  @labels = Labels.new
 	haml :search
 end
 	
+post '/search' do
+  if params[:name] == "off"
+  check = "off"
+  else
+  check = "ON"
+  end
+  "Not Yet,But chosen search by date #{check}!"
+end
 
 #Error handling
 not_found do

@@ -9,17 +9,10 @@
     %link{ :href => "css/style.css", :rel => "stylesheet", :type => "text/css" }
 
   %body
-    %script{ :type => "text/javascript" }
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    %script{ :type => "text/javascript" }
-      try {
-      var pageTracker = _gat._getTracker("UA-2683223-6");
-      pageTracker._trackPageview();
-      } catch(err) {}
     .toolbar
       %h1{'id'=> 'pageTitle'}
       %a{:href => '#', :id => 'backButton', :class => 'button'}
+      %a{:href => '/search', :id => 'searchButton', :class => 'button', :target => '_self'} search
     %ul{'selected' => 'true', :title => @iblog.title}
       %h3.header{:align => 'center'}
         = @iblog.subtitle
