@@ -16,10 +16,10 @@
       #toggl1
         %fieldset
           %form#search{ :method => "post" }
-            %input#search_withbydate{ :name => "search_withbydate", :type => "hidden", :value => "OFF" }
+            %input#search_withbydate{ :name => 'search_withbydate', :type => 'hidden', :value => 'OFF' }
               .row
                 %label by date
-                #search_withbydate.toggle{ :onclick => "$('search_withbydate').value = ($('search_withbydate').value == 'OFF') ? 'ON' : 'OFF';", :toggled => "OFF" }
+                #search_withbydate.toggle{ :onclick => "document.getElementById('search_withbydate').value = (document.getElementById('search_withbydate').value == 'OFF') ? 'ON' : 'OFF';", :toggled => 'OFF'}
                   %span.thumb
                   %span.toggleOn ON
                   %span.toggleOff OFF
