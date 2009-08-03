@@ -49,8 +49,8 @@ get '/search' do
 end
 	
 post '/search' do
-  if params[:name] == "off"
-  check = "off"
+  if params[:name] == "OFF"
+  check = "OFF"
   else
   check = "ON"
   end
