@@ -49,7 +49,7 @@ get '/search' do
 end
 	
 post '/search' do
-  if params[:name] == "OFF"
+  if params[:search_withbydate] == "OFF"
   check = "OFF"
   else
   check = "ON"
