@@ -59,5 +59,5 @@ end
 
 #Error handling
 not_found do
-    '404 This is nowhere to be found'
+    '404 This is nowhere to be found.'
 end
